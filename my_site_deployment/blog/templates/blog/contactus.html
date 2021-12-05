@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Contact Us
+{% endblock title %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'blog/contactus.css' %}">  
+{% endblock css_files %}
+
+
+{% block content %}
+
+<h3>Contact US</h3>
+<hr>
+<div class="contactus">
+    <div class="container1">
+        <div class="col-md-6">
+            <h3>Heliopolis</h3>
+            <p style="margin-top: 3rem;">6 Mohammad Askar St., from El Hegaz st., 
+                (Heliopolis hospital to El Mahkama direction) Ground Floor.</p>
+            <p>
+                <span style="font-weight: bold;">Phone Number:</span>
+                <span>01010101010</span>
+            </p>
+            <p style="font-weight: bold;">Working Days:</p>
+            <p>Sٍaturdays, Mondays and Wednesdays from 4 to 8 pm </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.657132835201!2d31.409223314957416!3d30.017999981892032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583ceffe37babf%3A0xfefdcdeca69a67ac!2sDowntown%20Mall!5e0!3m2!1sen!2seg!4v1631122520844!5m2!1sen!2seg" 
+                allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="input-form">
+            <p>Reservation Your visit from here</p>
+            <form action="{% url 'contact-us' %}" method="POST">
+                {% csrf_token %}
+                {% if Reservations %}
+                <div class="form-group">
+                    <h5>{{Reservations.user_name.label_tag}}  {{Reservations.user_name}}</h5>
+                </div>
+                <div class="form-group">
+                    <h5>{{Reservations.phone_number.label_tag}}  {{Reservations.phone_number}}</h5>
+                </div>
+                <div class="form-group">
+                    <h5>{{Reservations.date.label_tag}}  {{Reservations.date}}</h5>
+                </div>
+                <input type="submit" value="Submit">
+                {% endif %}                
+            </form> 
+        </div>
+    </div>
+        
+<hr>
+    <div class="container1" style="margin: top 5rem;">
+        <div class="col-md-6">
+            <h3>Maadi</h3>
+            <p style="margin-top: 3rem;">6 Mohammad Askar St., from El Hegaz st., 
+                (Heliopolis hospital to El Mahkama direction) Ground Floor.</p>
+            <p>
+                <span style="font-weight: bold;">Phone Number:</span>
+                <span>01010101010</span>
+            </p>
+            <p style="font-weight: bold;"> Working Days:</p>
+            <p>Sundays and Tuesdays from 4 to 6 pm <br>
+                Thursdays 8 to 10 pm</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.657132835201!2d31.409223314957416!3d30.017999981892032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583ceffe37babf%3A0xfefdcdeca69a67ac!2sDowntown%20Mall!5e0!3m2!1sen!2seg!4v1631123871236!5m2!1sen!2seg" 
+                allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="input-form">
+            <p>Reservation Your visit from here</p>
+            <form action="{% url 'contact-us' %}" method="POST">
+                {% csrf_token %}
+                {% if Reservationmaadi %}                
+                    <div class="form-group row">
+                        <h5 class="col-sm-2 col-form-label" style="font-weight: bold;font-size:large">{{Reservationmaadi.user_name.label_tag}}</h5>
+                        <h5 class="col-sm-5">{{Reservationmaadi.user_name}}</h5>
+                        <!-- <h5>{{Reservationmaadi.user_name.label_tag}}  {{Reservationmaadi.user_name}}</h5> -->
+                    </div>
+                    <div class="form-group row">
+                        <h5 class="col-sm-2 col-form-label" style="font-weight: bold;font-size:large">{{Reservationmaadi.phone_number.label_tag}}</h5>
+                        <h5 class="col-sm-5">{{Reservationmaadi.phone_number}}</h5>
+                        <!-- <h5>{{Reservationmaadi.phone_number.label_tag}}  {{Reservationmaadi.phone_number}}</h5> -->
+                    </div>
+                    <div class="form-group row">
+                        <h5 class="col-sm-2 col-form-label" style="font-weight: bold;font-size:large">{{Reservationmaadi.date.label_tag}}</h5>
+                        <h5 class="col-sm-5">{{Reservationmaadi.date}}</h5>
+                        <!-- <h5>{{Reservationmaadi.date.label_tag}}  {{Reservationmaadi.date}}</h5> -->
+                    </div>                
+                <input type="submit" value="Submit" class="col-sm-2" style="position:absolute;">
+                {% endif %}
+            </form> 
+        </div>
+    </div>
+    
+</div>
+
+
+
+{% endblock content %}
+
+{% block script %}
+
+{% endblock script %}

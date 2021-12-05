@@ -1,0 +1,41 @@
+
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    text-align: center;
+}
+
+.post h3 {
+    margin: 0.25rem 0;
+}
+
+.post time{
+    color: #666666;
+    margin: 0.25rem;
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+.post:hover time,
+.post:active time {
+    color: white;
+}
+
+.post_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    text-align: center;
+}
+
+
+
+.post_content h3 {
+    font-size: 2rem;
+}
+
+.post_content p {
+    font-size: 1.5rem;
+    color: #e25353;
+}
