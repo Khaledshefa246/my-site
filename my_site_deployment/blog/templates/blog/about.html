@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  My Blog
+{% endblock title %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'blog/about.css' %}">
+  
+{% endblock css_files %}
+
+
+{% block content %}
+
+<div class="container">
+    <h3>Dr. Ahmed Tareq</h3>
+    <img src="{% static 'blog/images/book.jpg' %}" alt="Dr.Mohamed" class="mx-auto d-block">
+    <p><span><span style="font-weight: bold;">Dr. Ahmed Tareq Kamal Motawi,</span> <br>
+        was born and grew up in Cairo, Egypt, specifically in the district of Heliopolis.
+    </span></p>
+    <p><span>Basic education was completed at the English school, Heliopolis branch in 2001.
+        Then he joined the Faculty of Medicine (Kasr Alainy) at Cairo University and
+        graduated in 2007 cum laude with honors, he completed ,a five years, training as an intern and resident
+        in the Department of Andrology, Sexual medicine and STIs. He also earned the master's degree in the same 
+        field in 2012 and also the fellowship of the European Committee of sexual medicine from Netherlands in the same year.
+        Dr. Motawi achieved the degree of medical doctorate in his field in 2015.
+    </span></p>
+    <p><span>Dr. Motawi is an academician at the Faculty of Medicine - Cairo University (Kasr Alainy), and is currently working as 
+        a lecturer at the Department of Andrology, Sexual medicine and STIs.
+    </span></p>
+</div>
+
+
+
+{% endblock content %}
